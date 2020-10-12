@@ -8,6 +8,10 @@ trigger:
 
 pool:
   vmImage: 'ubuntu-latest'
+resources:
+  containers:
+  - container: builder
+    image: ubuntu:18.04
 
 steps:
 - task: Maven@3
@@ -26,3 +30,9 @@ steps:
     repository: 'vladbronfman/maven-hello-world'
     command: 'buildAndPush'
     Dockerfile: '**/Dockerfile'
+
+- task: Docker@2
+  inputs:
+    containerRegistry: 'dockerHub'
+    command: 'start'
+    container: builder
