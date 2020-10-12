@@ -37,4 +37,4 @@ steps:
     command: login
     containerRegistry: dockerHub
 - script: |
-      docker run -t vladbronfman/maven-hello-world:latest
+      docker run -t vladbronfman/maven-hello-world:16 #for test sake only!
