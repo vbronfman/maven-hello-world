@@ -1,4 +1,5 @@
 FROM openjdk:8
+WORKDIR my-app
 COPY target/my-app-1.0-SNAPSHOT.jar .
 #ADD
 #ENVIRONMENT
